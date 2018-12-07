@@ -87,13 +87,14 @@ public class player : MonoBehaviour
 
         if ( gameOver.gameOver )
         {
-            transform.position = new Vector3(-50, 10, 0);
+            transform.position = new Vector3(30, 15, 0);
             gameOver.gameOver = false;
             jtyme = 2;
         }
     }
     private void OnTriggerEnter( Collider other )
     {
+        jtyme = 0;
         jtyme = 0;
     }
     void transformMove( )
