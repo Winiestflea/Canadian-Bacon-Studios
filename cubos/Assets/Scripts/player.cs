@@ -95,7 +95,6 @@ public class player : MonoBehaviour
     private void OnTriggerEnter( Collider other )
     {
         jtyme = 0;
-        jtyme = 0;
     }
     void transformMove( )
     {
