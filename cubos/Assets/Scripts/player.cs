@@ -10,6 +10,8 @@ public class player : MonoBehaviour
     public int jtyme;
     bool spaceOn;
     public gameOverDetector gameOver;
+    public iGotTriggered triggeredLeft;
+    public iGotTriggered triggeredRight;
 
     // Use this for initialization
     void Start( )
@@ -90,6 +92,10 @@ public class player : MonoBehaviour
             transform.position = new Vector3(30, 15, 0);
             gameOver.gameOver = false;
             jtyme = 2;
+        }
+        if ( triggeredLeft || triggeredRight)
+        {
+            cube.velocity = new Vector3(0, cube.velocity.y, cube.velocity.z);
         }
     }
     private void OnTriggerEnter( Collider other )
