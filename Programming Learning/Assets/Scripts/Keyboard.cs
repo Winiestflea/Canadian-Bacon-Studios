@@ -14,8 +14,7 @@ public class Keyboard : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (ShowHello)
-            Debug.Log(Input.GetKey(KeyCode.A));
+        if (Input.GetKey(KeyCode.A))
+            Debug.Log("AAA");
         }
 	}
-}
