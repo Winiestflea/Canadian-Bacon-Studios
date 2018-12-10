@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
     // this are all the external connections
     public Rigidbody2D rigidB;
     public Collider2D collition;
+    public cameraFollower camera;
 
     [Header("adjustable stuff")]
 
@@ -18,6 +19,7 @@ public class playerController : MonoBehaviour {
     public float gravity = 1.3f;
     public float drag = 1;
     public float jumpForce = 1;
+    public float normalHmovement = 2;
 
     [Header("internal calculations")]
 
@@ -73,30 +75,30 @@ public class playerController : MonoBehaviour {
         if ( rightPressed || leftPressed )
         {
             // this is for when you press right or left, checks if you did, and if you are not on the limit it will try to start runing
-            if ( rightPressed && currentHspeed < maxspeed )
+            if ( rightPressed && currentHspeed < maxspeed  + normalHmovement )
             {
-                currentHspeed += speedIncrease;
+                currentHspeed += speedIncrease + normalHmovement + 2;
             }
             if ( leftPressed && currentHspeed > -maxspeed )
             {
-                currentHspeed -= speedIncrease;
+                currentHspeed -= speedIncrease + normalHmovement + 2;
             }
             // insert here the runing animation------------------------------------------------------
         }
         else
         {
-            // if you are not pressing anything return to 0
-            if ( currentHspeed < -speedIncrease * 2 )
+            // if you are not pressing anything return to the value of normalHmovement
+            if ( currentHspeed < -speedIncrease * 2 + normalHmovement)
             {
                 currentHspeed += drag;
             }
-            else if ( currentHspeed > speedIncrease * 2 )
+            else if ( currentHspeed > speedIncrease * 2 + normalHmovement)
             {
                 currentHspeed -= drag;
             }
             else
             {
-                currentHspeed = 0;
+                currentHspeed = normalHmovement;
             }
         }
 
