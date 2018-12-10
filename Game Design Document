@@ -1,0 +1,18 @@
+Canadian Bacon Studios
+
+Blocky Stairs (WIP)
+
+Summary:
+2D Pixel Art Platformer based on climbing as many stairs as possible in one direction. 
+As you climb the camera will move with you towards the right, but not to the left. 
+Simple enemies will push you back, touching the left side of the screen will result in a game over.
+
+Mechanics & Rules:
+
+2D
+Pixel Art
+Controllable Jump
+Infinite Run
+Screen goes to the right, returning is the end condition.
+Points based on amount of stairs jumped
+Basic Enemies push you.
