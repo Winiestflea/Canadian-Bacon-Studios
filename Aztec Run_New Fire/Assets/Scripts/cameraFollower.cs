@@ -7,6 +7,7 @@ public class cameraFollower : MonoBehaviour {
     public Transform player;
 
     public bool isActive = false;
+    public bool pressedF = false;
 
     public float camXPos = 0;
     public float camYPos = 0;
@@ -19,6 +20,21 @@ public class cameraFollower : MonoBehaviour {
     private void Start( )
     {
         camYPos = player.position.x;
+    }
+
+    private void Update() //This is to toggle the camera movement
+    {
+        if (Input.GetKeyDown(KeyCode.F) && pressedF == false)
+        {
+            isActive = true;
+            pressedF = true;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.F) && pressedF == true)
+        {
+            isActive = false;
+            pressedF = false;
+        }
     }
 
     private void FixedUpdate( )
