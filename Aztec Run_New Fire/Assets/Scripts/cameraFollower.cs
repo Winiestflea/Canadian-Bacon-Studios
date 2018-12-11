@@ -16,6 +16,7 @@ public class cameraFollower : MonoBehaviour {
     public float vSliding;
 
     public int spacing = 10;
+    public int allowence = 20;
 
     private void Start( )
     {
@@ -54,6 +55,11 @@ public class cameraFollower : MonoBehaviour {
                 {
                     camYPos += vSliding;
                 }
+            }
+            if ( player.position.x - camXPos > allowence )
+            {
+                Debug.Log("necesita avanzar: "+( ( player.position.x - camXPos ) / 50 ));
+                camXPos += ( player.position.x - camXPos ) / 30;
             }
         }
 
