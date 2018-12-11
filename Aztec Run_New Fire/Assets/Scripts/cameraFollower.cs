@@ -58,12 +58,13 @@ public class cameraFollower : MonoBehaviour {
             }
             if ( player.position.x - camXPos > allowence )
             {
-                Debug.Log("necesita avanzar: "+( ( player.position.x - camXPos ) / 50 ));
                 camXPos += ( player.position.x - camXPos ) / 30;
             }
         }
 
         transform.position = new Vector3(camXPos, camYPos, -10);
+
+        
     }
 
 }
