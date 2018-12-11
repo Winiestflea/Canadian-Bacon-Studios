@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Stairs.unity
-    guid: 1d72c3134438bb140bf868d014dd14ed
+    path: Assets/Scenes/Movement Test.unity
+    guid: 70a98818707d31247bf62905df15530b
   m_configObjects: {}
