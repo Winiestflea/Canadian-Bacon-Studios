@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
     // this are all the external connections
     public Rigidbody2D rigidB;
     public Collider2D collition;
+    public Collider2D crouchCol;
     public cameraFollower camera;
 
     [Header("adjustable stuff")]
@@ -18,6 +19,7 @@ public class playerController : MonoBehaviour {
     public float speedIncrease = 2;
     public float gravity = 1.3f;
     public float drag = 1;
+    public float slideDrag = 0.01f;
     public float jumpForce = 1;
     public float normalHmovement = 2;
 
@@ -32,7 +34,11 @@ public class playerController : MonoBehaviour {
     // all the internal stuff and variables, that are used personally as key detection
     private bool rightPressed = false;
     private bool leftPressed = false;
-    private bool crouchPressed = false;
+    private bool crouchStarted = false;
+    private float initialDrag;
+    private float initialNormalHMOvement;
+    private bool crouchEnded = true;
+    private bool crouching = false;
     private bool jumpPressed = false;
     private bool jumpEnded = false;
     private bool attackPressed = false;
@@ -44,7 +50,8 @@ public class playerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        initialDrag = drag;
+        initialNormalHMOvement = normalHmovement;
 	}
 	
 	// Update is called once per frame
@@ -71,11 +78,53 @@ public class playerController : MonoBehaviour {
 
         // all the meths that controll the people
 
+        if ( Input.GetKeyDown(KeyCode.S) )
+        {
+            crouching = true;
+            collition.enabled = false;
+            crouchCol.enabled = true;
+            normalHmovement = 0.5f;
+            drag = slideDrag;
+            Debug.Log("drag changed");
+            //start here crouching aniation -------------------------------------------------------------------
+
+        }
+
+        if ( Input.GetKeyUp(KeyCode.S) )
+        {
+            crouching = false;
+            collition.enabled = true;
+            crouchCol.enabled = false;
+            drag = initialDrag;
+            normalHmovement = initialNormalHMOvement;
+            //return here to normal animation -----------------------------------------------------------------------
+        }
+
+        if ( crouching )
+        {
+            /*
+            if ( rightPressed )
+            {
+                drag = slideDrag / 1.001f;
+            }
+            else if ( leftPressed )
+            {
+                drag = slideDrag * 2;
+            }
+            else
+            {
+                drag = slideDrag;
+            }
+            */
+            leftPressed = false;
+            rightPressed = false;
+        }
+
         //this is for vertival controlls
         if ( rightPressed || leftPressed )
         {
             // this is for when you press right or left, checks if you did, and if you are not on the limit it will try to start runing
-            if ( rightPressed && currentHspeed < maxspeed  + normalHmovement )
+            if ( rightPressed && currentHspeed < maxspeed + normalHmovement )
             {
                 currentHspeed += speedIncrease + normalHmovement + 2;
             }
@@ -88,13 +137,14 @@ public class playerController : MonoBehaviour {
         else
         {
             // if you are not pressing anything return to the value of normalHmovement
-            if ( currentHspeed < -speedIncrease * 2 + normalHmovement)
+            if ( currentHspeed < -drag * 2 + normalHmovement )
             {
                 currentHspeed += drag;
             }
-            else if ( currentHspeed > speedIncrease * 2 + normalHmovement)
+            else if ( currentHspeed > drag * 2 + normalHmovement )
             {
                 currentHspeed -= drag;
+                Debug.Log("drag applied");
             }
             else
             {

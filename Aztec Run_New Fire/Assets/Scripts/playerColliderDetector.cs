@@ -10,6 +10,10 @@ public class playerColliderDetector : MonoBehaviour {
     private void OnTriggerEnter2D( Collider2D collision )
     {
         connection.grounded = true;
+        if (collision.gameObject.name == "normalGround" )
+        {
+
+        }
     }
     private void OnTriggerExit2D( Collider2D collision )
     {
