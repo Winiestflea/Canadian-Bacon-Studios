@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackScript : MonoBehaviour {
+public class AttackScript : MonoBehaviour
+{
 
     private bool isActive = false;
-    private bool pressed = false;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && pressed == false)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isActive = true;
-            pressed = true;
+            StartCoroutine(Attack());
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space) && pressed == true)
+        if (isActive == true)
         {
-            isActive = false;
-            pressed = false;
+            Debug.Log("Attack");
         }
+
     }
+
+    IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(1);
+        isActive = false;
+    }
+
 }
