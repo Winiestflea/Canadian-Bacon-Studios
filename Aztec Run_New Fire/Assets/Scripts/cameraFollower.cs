@@ -9,11 +9,12 @@ public class cameraFollower : MonoBehaviour {
     public bool isActive = false;
     public bool pressedF = false;
 
+
     public float camXPos = 0;
     public float camYPos = 0;
 
     public float sliding = 0.2f;
-    public float vSliding;
+    public float vSliding; 
 
     public int spacing = 10;
     public int allowence = 20;
@@ -25,17 +26,12 @@ public class cameraFollower : MonoBehaviour {
 
     private void Update() //This is to toggle the camera movement
     {
-        if (Input.GetKeyDown(KeyCode.F) && pressedF == false)
+        if (Input.GetKeyUp(KeyCode.G))
         {
-            isActive = true;
-            pressedF = true;
+            isActive = !isActive;
+            Debug.Log("Switch");
         }
 
-        else if (Input.GetKeyDown(KeyCode.F) && pressedF == true)
-        {
-            isActive = false;
-            pressedF = false;
-        }
     }
 
     private void FixedUpdate( )
@@ -60,9 +56,10 @@ public class cameraFollower : MonoBehaviour {
             {
                 camXPos += ( player.position.x - camXPos ) / 30;
             }
+            transform.position = new Vector3(camXPos, camYPos, -10);
         }
 
-        transform.position = new Vector3(camXPos, camYPos, -10);
+
 
         
     }
