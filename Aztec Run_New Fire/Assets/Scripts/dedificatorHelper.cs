@@ -5,7 +5,7 @@ using UnityEngine;
 public class dedificatorHelper : MonoBehaviour {
 
     public int screenSize;
-
+    public bool isActive = false;
     public RestartHotkey restarter; 
 
 
@@ -21,7 +21,7 @@ public class dedificatorHelper : MonoBehaviour {
 	}
     private void OnTriggerEnter2D( Collider2D collision )
     {
-        if ( collision.gameObject.name == "Player" )
+        if ( collision.gameObject.name == "Player" && isActive)
         {
             restarter.activate = true;
         }

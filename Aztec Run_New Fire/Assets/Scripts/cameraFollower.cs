@@ -20,7 +20,7 @@ public class cameraFollower : MonoBehaviour {
 
     private void Start( )
     {
-        camYPos = player.position.x;
+        
     }
 
     private void Update() //This is to toggle the camera movement
