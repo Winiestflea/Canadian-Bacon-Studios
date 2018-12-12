@@ -10,7 +10,8 @@ public class playerController : MonoBehaviour {
     public Rigidbody2D rigidB;
     public Collider2D collition;
     public Collider2D crouchCol;
-    public cameraFollower camera;
+    public AttackScript rightAttack;
+    public AttackScript leftAttack;
 
     [Header("adjustable stuff")]
 
@@ -29,6 +30,7 @@ public class playerController : MonoBehaviour {
     public float currentHspeed = 0; //horizontal speed
 
     public bool grounded = true;
+    public bool touchingNormalGround = false;
     public bool jumping = false;
 
     // all the internal stuff and variables, that are used personally as key detection
@@ -73,12 +75,14 @@ public class playerController : MonoBehaviour {
         rightPressed = Input.GetKey(KeyCode.D);
         leftPressed = Input.GetKey(KeyCode.A);
 
+        attackPressed = Input.GetKeyDown(KeyCode.Space);
+
         jumpPressed = Input.GetKeyDown(KeyCode.W);
         jumpEnded = Input.GetKeyUp(KeyCode.W);
 
         // all the meths that controll the people
 
-        if ( Input.GetKeyDown(KeyCode.S) )
+        if ( Input.GetKeyDown(KeyCode.S) ) //if you start the slide 
         {
             crouching = true;
             collition.enabled = false;
@@ -90,7 +94,7 @@ public class playerController : MonoBehaviour {
 
         }
 
-        if ( Input.GetKeyUp(KeyCode.S) )
+        if ( Input.GetKeyUp(KeyCode.S) ) //if you realise the slide
         {
             crouching = false;
             collition.enabled = true;
@@ -102,22 +106,14 @@ public class playerController : MonoBehaviour {
 
         if ( crouching )
         {
-            /*
-            if ( rightPressed )
-            {
-                drag = slideDrag / 1.001f;
-            }
-            else if ( leftPressed )
-            {
-                drag = slideDrag * 2;
-            }
-            else
-            {
-                drag = slideDrag;
-            }
-            */
+            // if you are crouching, deactivate movement and let drag slow you down
             leftPressed = false;
             rightPressed = false;
+            if ( grounded && !touchingNormalGround )
+            {
+                grounded = false;
+                falling = true;
+            }
         }
 
         //this is for vertival controlls
@@ -149,6 +145,18 @@ public class playerController : MonoBehaviour {
             else
             {
                 currentHspeed = normalHmovement;
+            }
+        }
+
+        if ( attackPressed )
+        {
+            if (currentHspeed >= 0 )
+            {
+                rightAttack.isActive = true;
+            }
+            else
+            {
+                leftAttack.isActive = true;
             }
         }
 

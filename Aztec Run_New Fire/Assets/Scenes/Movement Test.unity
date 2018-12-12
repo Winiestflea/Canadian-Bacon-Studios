@@ -320,7 +320,7 @@ Transform:
   m_LocalScale: {x: 0.075, y: 0.09857421, z: 1}
   m_Children: []
   m_Father: {fileID: 1124111247}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &799095950
 MonoBehaviour:
@@ -436,6 +436,8 @@ Transform:
   m_LocalPosition: {x: 3.95, y: 1.31, z: -1}
   m_LocalScale: {x: 3.2539, y: 3.2539, z: 3.2539}
   m_Children:
+  - {fileID: 1350603938}
+  - {fileID: 1239542532}
   - {fileID: 799095949}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -474,7 +476,8 @@ MonoBehaviour:
   rigidB: {fileID: 1124111248}
   collition: {fileID: 1124111251}
   crouchCol: {fileID: 1124111250}
-  camera: {fileID: 519420030}
+  rightAttack: {fileID: 1350603935}
+  leftAttack: {fileID: 1239542529}
   maxspeed: 2
   speedIncrease: 1.01
   gravity: 1.5
@@ -485,6 +488,7 @@ MonoBehaviour:
   currentVspeed: 0
   currentHspeed: 0
   grounded: 0
+  touchingNormalGround: 0
   jumping: 0
   falling: 1
 --- !u!70 &1124111250
@@ -568,11 +572,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239542532}
-  - component: {fileID: 1239542531}
   - component: {fileID: 1239542530}
   - component: {fileID: 1239542529}
   m_Layer: 0
-  m_Name: 'Dedificator #2'
+  m_Name: DedificatorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,13 +592,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd810572f6b5f0f4cbb8e8afd8a4399a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
+  existing: {fileID: 1239542530}
 --- !u!61 &1239542530
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239542528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -614,54 +619,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!1839735485 &1239542531
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1239542528}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
 --- !u!4 &1239542532
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239542528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4, y: 1.31, z: 8.600123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.16902792, y: 0, z: 2.9503436}
+  m_LocalScale: {x: 0.30732352, y: 0.30732352, z: 0.30732352}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1124111247}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350603934
 GameObject:
@@ -671,11 +640,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350603938}
-  - component: {fileID: 1350603937}
   - component: {fileID: 1350603936}
   - component: {fileID: 1350603935}
   m_Layer: 0
-  m_Name: Dedificator
+  m_Name: DedificatorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,13 +660,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd810572f6b5f0f4cbb8e8afd8a4399a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
+  existing: {fileID: 1350603936}
 --- !u!61 &1350603936
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350603934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -717,54 +687,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!1839735485 &1350603937
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1350603934}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
 --- !u!4 &1350603938
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350603934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 1.31, z: 8.600123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16902792, y: 0, z: 2.9503436}
+  m_LocalScale: {x: 0.30732352, y: 0.30732352, z: 0.30732352}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1124111247}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1386071695
 GameObject:

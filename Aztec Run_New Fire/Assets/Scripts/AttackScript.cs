@@ -5,27 +5,31 @@ using UnityEngine;
 public class AttackScript : MonoBehaviour
 {
 
-    private bool isActive = false;
+    public bool isActive = false;
+    public Collider2D existing;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isActive = true;
-            StartCoroutine(Attack());
-        }
-
-        if (isActive == true)
+        if (isActive)
         {
             Debug.Log("Attack");
+
+            StartCoroutine(Attack());
         }
 
     }
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(1);
+        // do startup sequence
+        existing.enabled = true;
         isActive = false;
+
+        // wait for 1 sec(or more if needed later)
+        yield return new WaitForSeconds(1);
+        // do endup sequence 
+        existing.enabled = false;
+        
     }
 
 }
