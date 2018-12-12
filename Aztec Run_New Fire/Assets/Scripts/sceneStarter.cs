@@ -19,7 +19,7 @@ public class sceneStarter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         StartCoroutine(fadeIn());
-        startup();
+        StartCoroutine( startup());
 	}
 	
 	/*
@@ -38,17 +38,6 @@ public class sceneStarter : MonoBehaviour {
 	}
     */
 
-    void startup( )
-    {
-        while ( player.position.x < 0 )
-        {
-            player.position = new Vector3(player.position.x + 0.05f, player.position.y, player.position.z);
-        }
-        playerScripts.enabled = true;
-        camScript.isActive = true;
-        dedificator.isActive = true;
-    }
-
     // this IEnumerator is the thing that gets called and starts working next to our code
     IEnumerator fadeIn()
     {
@@ -61,7 +50,21 @@ public class sceneStarter : MonoBehaviour {
             image.alpha = Mathf.Lerp(1 // this one means 
                 , 0, ( Time.time - start ) / fadeDur); // take the alpha of our image away
             yield return null; // This helps the function keep track of the time that it has
+
         }
         image.alpha = 0; // take out that little float remainder and just turn it of
+    }
+
+    IEnumerator startup( )
+    {
+        while ( player.position.x < 0 )
+        {
+            player.position = new Vector3(player.position.x + 0.05f, player.position.y, player.position.z);
+            yield return new WaitForEndOfFrame();
+        }
+        playerScripts.enabled = true;
+        camScript.isActive = true;
+        dedificator.isActive = true;
+        
     }
 }
