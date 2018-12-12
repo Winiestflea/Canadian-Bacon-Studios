@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 366970894}
   - component: {fileID: 366970893}
   - component: {fileID: 366970892}
+  - component: {fileID: 366970895}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -234,7 +235,7 @@ MonoBehaviour:
   camScript: {fileID: 519420030}
   playerScripts: {fileID: 1124111249}
   dedificator: {fileID: 1739315966}
-  image: {fileID: 0}
+  image: {fileID: 366970895}
   fadeDur: 5
 --- !u!114 &366970893
 MonoBehaviour:
@@ -242,7 +243,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366970890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -270,6 +271,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366970890}
   m_CullTransparentMesh: 0
+--- !u!225 &366970895
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366970890}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
