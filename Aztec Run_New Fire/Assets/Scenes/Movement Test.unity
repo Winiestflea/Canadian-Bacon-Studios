@@ -234,6 +234,8 @@ MonoBehaviour:
   camScript: {fileID: 519420030}
   playerScripts: {fileID: 1124111249}
   dedificator: {fileID: 1739315966}
+  image: {fileID: 0}
+  fadeDur: 5
 --- !u!114 &366970893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1124111247}
   isActive: 0
-  pressedF: 0
   camXPos: 0
   camYPos: 0
   sliding: 0.05
@@ -461,6 +462,7 @@ GameObject:
   - component: {fileID: 1124111249}
   - component: {fileID: 1124111250}
   - component: {fileID: 1124111251}
+  - component: {fileID: 1124111252}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -504,7 +506,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -609,6 +611,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000000013738432, y: 0.06636216}
   m_Size: {x: 0.11974304, y: 0.2622594}
   m_Direction: 0
+--- !u!95 &1124111252
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124111245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f23296e76d42f2e4d985d12a82e384b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1205769153
 GameObject:
   m_ObjectHideFlags: 0
