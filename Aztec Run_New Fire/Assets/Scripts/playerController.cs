@@ -89,7 +89,6 @@ public class playerController : MonoBehaviour {
             crouchCol.enabled = true;
             normalHmovement = 0.5f;
             drag = slideDrag;
-            Debug.Log("drag changed");
             //start here crouching aniation -------------------------------------------------------------------
 
         }
@@ -109,6 +108,7 @@ public class playerController : MonoBehaviour {
             // if you are crouching, deactivate movement and let drag slow you down
             leftPressed = false;
             rightPressed = false;
+            jumpPressed = false;
             if ( grounded && !touchingNormalGround )
             {
                 grounded = false;
@@ -140,7 +140,6 @@ public class playerController : MonoBehaviour {
             else if ( currentHspeed > drag * 2 + normalHmovement )
             {
                 currentHspeed -= drag;
-                Debug.Log("drag applied");
             }
             else
             {

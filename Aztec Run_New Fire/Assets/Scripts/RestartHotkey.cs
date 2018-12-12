@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class RestartHotkey : MonoBehaviour {
 
+    public bool activate = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -12,7 +14,7 @@ public class RestartHotkey : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.R))
+		if (Input.GetKeyDown(KeyCode.R) || activate)
         {
             SceneManager.LoadScene("Movement Test");
         }
