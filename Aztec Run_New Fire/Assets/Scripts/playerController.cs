@@ -93,6 +93,15 @@ public class playerController : MonoBehaviour {
 
         }
 
+        if ( Input.GetKey(KeyCode.S) )
+        {
+            crouching = true;
+        }
+        else
+        {
+            crouching = false;
+        }
+
         if ( Input.GetKeyUp(KeyCode.S) ) //if you realise the slide
         {
             crouching = false;
@@ -175,7 +184,7 @@ public class playerController : MonoBehaviour {
         if ( grounded ) falling = false;
 
         // controll al the jumping action
-        if ( jumping )
+        if ( jumping && currentVspeed < 20 )
         {
             // slowly make the jump fade
             currentVspeed -= gravity * currentVspeed / 10;
@@ -188,6 +197,12 @@ public class playerController : MonoBehaviour {
             }
             else falling = false;
             // add here the jumping animation --------------------------------------------
+        }
+        if ( currentVspeed > 20 )
+        {
+            falling = true;
+            jumping = false;
+            currentVspeed = 0;
         }
 
         // make gravity happen

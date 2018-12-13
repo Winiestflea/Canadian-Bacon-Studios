@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Movement Test.unity
     guid: 70a98818707d31247bf62905df15530b
+  - enabled: 1
+    path: Assets/Scenes/nextLvl.unity
+    guid: c84ffa573b9797a469e386fe106459ef
   m_configObjects: {}

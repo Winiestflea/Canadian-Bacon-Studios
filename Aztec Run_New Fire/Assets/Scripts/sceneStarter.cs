@@ -18,6 +18,7 @@ public class sceneStarter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        image.alpha = 1;
         StartCoroutine(fadeIn());
         StartCoroutine( startup());
 	}
@@ -47,7 +48,7 @@ public class sceneStarter : MonoBehaviour {
         while ( (Time.time - start) //we start taking the opacity away and count the time that has passed
             < fadeDur ) // if the time passed is smaller, than the finish, just continue
         {
-            image.alpha = Mathf.Lerp(1 // this one means 
+            image.alpha = Mathf.Lerp(1 // this one means go from 1 to 0 in 3 number of time
                 , 0, ( Time.time - start ) / fadeDur); // take the alpha of our image away
             yield return null; // This helps the function keep track of the time that it has
 

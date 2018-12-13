@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RestartHotkey : MonoBehaviour {
 
     public bool activate = false;
+    public playerKiller killifier;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,7 @@ public class RestartHotkey : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.R) || activate)
         {
-            SceneManager.LoadScene("Movement Test");
+            killifier.enabled = true;
         }
 	}
 }
