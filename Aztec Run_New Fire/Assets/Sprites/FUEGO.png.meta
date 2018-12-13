@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: d8fa8728d89918e499f7626229559b27
+guid: 5c6dd8ebfec076c49a3f74d5de9f896f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FUEGOidleYrun (1)_0
-    21300002: FUEGOidleYrun (1)_1
-    21300004: FUEGOidleYrun (1)_2
-    21300006: FUEGOidleYrun (1)_3
-    21300008: FUEGOidleYrun (1)_4
-    21300010: FUEGOidleYrun (1)_5
-    21300012: FUEGOidleYrun (1)_6
-    21300014: FUEGOidleYrun (1)_7
-    21300016: FUEGOidleYrun (1)_8
-    21300018: FUEGOidleYrun (1)_9
-    21300020: FUEGOidleYrun (1)_10
-    21300022: FUEGOidleYrun (1)_11
+    21300000: FUEGO_0
+    21300002: FUEGO_1
+    21300004: FUEGO_2
+    21300006: FUEGO_3
+    21300008: FUEGO_4
+    21300010: FUEGO_5
+    21300012: FUEGO_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -57,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 2500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,13 +91,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_0
+      name: FUEGO_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1056
-        width: 352
-        height: 352
+        x: 90
+        y: 990
+        width: 300
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,19 +105,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a1ac6a6a7630584aab137aa6430fc6b
+      spriteID: 6ab93fe2aaee2a54f87429823c1f3b77
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_1
+      name: FUEGO_1
       rect:
         serializedVersion: 2
-        x: 352
-        y: 1056
-        width: 352
-        height: 352
+        x: 570
+        y: 990
+        width: 300
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,19 +125,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d83e6294698f7a4183ca4d8e74f49de
+      spriteID: 336cfb683dc05af49823acdef4fbe452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_2
+      name: FUEGO_2
       rect:
         serializedVersion: 2
-        x: 704
-        y: 1056
-        width: 352
-        height: 352
+        x: 1050
+        y: 990
+        width: 300
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ec739ffffb83649b2b677628b81998
+      spriteID: 7211928ed8095d744b4a3c79ffa58044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_3
+      name: FUEGO_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 704
-        width: 352
-        height: 352
+        x: 75
+        y: 510
+        width: 315
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb77950f991d2e140858c86d23fa8549
+      spriteID: 5bf13134fcdc9ad4094cefd0b500c5a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_4
+      name: FUEGO_4
       rect:
         serializedVersion: 2
-        x: 352
-        y: 704
-        width: 352
-        height: 352
+        x: 570
+        y: 510
+        width: 300
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc24759c5ccfbf48aaa4e0d9da83fa3
+      spriteID: e1d23945c3220764db7de5eeacab5332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_5
+      name: FUEGO_5
       rect:
         serializedVersion: 2
-        x: 704
-        y: 705
-        width: 352
-        height: 352
+        x: 1050
+        y: 510
+        width: 300
+        height: 375
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,19 +205,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30aed114fb68d804a95e3a2e2a6beebe
+      spriteID: 75ed4592282b9f04fbd4d38842b863c9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUEGOidleYrun (1)_6
+      name: FUEGO_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 352
-        width: 352
-        height: 352
+        x: 90
+        y: 30
+        width: 300
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,87 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c3042d6840e9f42969e08ec975ee85
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUEGOidleYrun (1)_7
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 352
-        width: 352
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4f801be22a540d4c87ddb4a3ddad01b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUEGOidleYrun (1)_8
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 352
-        width: 352
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c59a50ce348d9fd45a1e17b15aa0e843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUEGOidleYrun (1)_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 352
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc737bf1b8351b40a9f8d1ef18a684e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUEGOidleYrun (1)_10
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 352
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 059eaa7bfd6888d42a8390d5e211eecf
+      spriteID: 10d90d3313a485e4cba508358b0ef2ce
       vertices: []
       indices: 
       edges: []
@@ -318,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 90a9c3096b3a94a4da9e17e35f0ac9e6
+    spriteID: 693dda36130174941950bc5d3e688b7a
     vertices: []
     indices: 
     edges: []
