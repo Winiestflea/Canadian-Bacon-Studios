@@ -4984,6 +4984,7 @@ GameObject:
   - component: {fileID: 1963617665}
   - component: {fileID: 1963617664}
   - component: {fileID: 1963617666}
+  - component: {fileID: 1963617667}
   m_Layer: 0
   m_Name: actualEnemy
   m_TagString: Untagged
@@ -5088,6 +5089,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killer: {fileID: 519420033}
   enemmy: {fileID: 335967981}
+--- !u!95 &1963617667
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963617662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06c65840e26c274458bab189513b9d31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1994067699
 GameObject:
   m_ObjectHideFlags: 0
