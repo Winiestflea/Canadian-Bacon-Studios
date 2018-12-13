@@ -12,6 +12,7 @@ public class playerController : MonoBehaviour {
     public Collider2D crouchCol;
     public AttackScript rightAttack;
     public AttackScript leftAttack;
+    public Animator anim;
 
     [Header("adjustable stuff")]
 
@@ -54,7 +55,8 @@ public class playerController : MonoBehaviour {
 	void Start () {
         initialDrag = drag;
         initialNormalHMOvement = normalHmovement;
-	}
+        anim = GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -89,6 +91,7 @@ public class playerController : MonoBehaviour {
             crouchCol.enabled = true;
             normalHmovement = 0.5f;
             drag = slideDrag;
+            anim.SetInteger("Direction", 3);
             //start here crouching aniation -------------------------------------------------------------------
 
         }
@@ -110,6 +113,7 @@ public class playerController : MonoBehaviour {
             drag = initialDrag;
             normalHmovement = initialNormalHMOvement;
             //return here to normal animation -----------------------------------------------------------------------
+            anim.SetInteger("Direction", 0);
         }
 
         if ( crouching )
@@ -138,6 +142,7 @@ public class playerController : MonoBehaviour {
                 currentHspeed -= speedIncrease + normalHmovement + 2;
             }
             // insert here the runing animation------------------------------------------------------
+            anim.SetInteger("Direction", 2);
         }
         else
         {
@@ -197,6 +202,7 @@ public class playerController : MonoBehaviour {
             }
             else falling = false;
             // add here the jumping animation --------------------------------------------
+            anim.SetInteger("Direction", 2);
         }
         if ( currentVspeed > 20 )
         {
@@ -213,6 +219,7 @@ public class playerController : MonoBehaviour {
             currentVspeed += (- (gravity * VSpeedPositivized) / 10 )- 1;
             falling = true;
             // start here the falling animation---------------------------
+            anim.SetInteger("Direction", 2);
         }
 
         // if you are not falling and you are in a certain sopt dont fall
