@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneEnder : MonoBehaviour {
+public class LVL02Ender : MonoBehaviour
+{
 
     public Transform player;
     public Transform camara;
@@ -17,10 +18,11 @@ public class sceneEnder : MonoBehaviour {
     public float fadeDur = 5f;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         StartCoroutine(endUp());
-	}
-    IEnumerator endUp( )
+    }
+    IEnumerator endUp()
     {
         float start = Time.time;
         playerScripts.enabled = false;
@@ -28,11 +30,11 @@ public class sceneEnder : MonoBehaviour {
         dedificator.isActive = false;
 
         camara.position = new Vector3(player.position.x, camara.position.y, camara.position.z);
-        while ( ( Time.time - start ) < fadeDur )
+        while ((Time.time - start) < fadeDur)
         {
             player.position = new Vector3(player.position.x + 0.001f, player.position.y, player.position.z);
             camara.position = new Vector3(camara.position.x + 0.02f, camara.position.y, camara.position.z);
-            image.alpha = Mathf.Lerp(0, 1, ( Time.time - start ) / fadeDur);
+            image.alpha = Mathf.Lerp(0, 1, (Time.time - start) / fadeDur);
             yield return null;
         }
         image.alpha = 1;
@@ -44,7 +46,7 @@ public class sceneEnder : MonoBehaviour {
     IEnumerator LoadingScreen()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("lvl02");
+        SceneManager.LoadScene("lvl01");
 
     }
 }
