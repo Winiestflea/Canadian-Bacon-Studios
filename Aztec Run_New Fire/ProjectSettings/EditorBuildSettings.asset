@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Movement Test.unity
     guid: 70a98818707d31247bf62905df15530b
+  - enabled: 1
+    path: Assets/Scenes/LVL01.unity
+    guid: 7a9d27e5fd85931439fab37261f73666
+  - enabled: 1
+    path: Assets/Scenes/lvl02.unity
+    guid: 5f28d7fa60e45ac46afce1bf39d16e4e
   - enabled: 1
     path: Assets/Scenes/nextLvl.unity
     guid: c84ffa573b9797a469e386fe106459ef

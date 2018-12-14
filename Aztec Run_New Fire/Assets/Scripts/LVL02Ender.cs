@@ -39,14 +39,7 @@ public class LVL02Ender : MonoBehaviour
         }
         image.alpha = 1;
 
-        SceneManager.LoadScene("nextLvl");
-        StartCoroutine(LoadingScreen());
+        SceneManager.LoadScene("lvl02");
     }
 
-    IEnumerator LoadingScreen()
-    {
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("lvl01");
-
-    }
 }
