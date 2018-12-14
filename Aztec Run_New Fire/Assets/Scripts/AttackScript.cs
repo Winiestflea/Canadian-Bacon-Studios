@@ -26,7 +26,7 @@ public class AttackScript : MonoBehaviour
         isActive = false;
 
         // wait for 1 sec(or more if needed later)
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         // do endup sequence 
         existing.enabled = false;
         
